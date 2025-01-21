@@ -1,4 +1,5 @@
-import { url } from "./utils/constant";
+import { useEffect, useState } from "react";
+import { ctx, url } from "./utils/constant";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
 import About from "./pages/About";
@@ -6,15 +7,10 @@ import NotFound from "./pages/NotFound";
 import "./styles/App.scss";
 import "./styles/index.scss";
 import Navbar from "./components/Navbar";
-import Logement from "./pages/Logement";
 import { fetchData } from "./utils/constant";
-import { useEffect, useState } from "react";
-import { ctx } from "./utils/constant";
-
+import Logement from "./pages/Logement";
 function App() {
   const [datas, setDatas] = useState([]);
-
-
   useEffect(() => {
     const fetchAppart = async () => {
       const apparts = await fetchData(url);

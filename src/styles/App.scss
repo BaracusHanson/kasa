@@ -51,6 +51,10 @@
   .navbar {
     justify-content: space-between;
     align-items: center;
+    padding-top: 0;
+  }
+  #root {
+    padding-top: 20px;
   }
 
   .navbar-logo {
@@ -103,12 +107,14 @@
 @media (max-width: 1240px) {
   .hero {
     height: 111px;
-    border-radius: 25px;
+    border-radius: 10px;
     margin-top: 25px;
     // padding: 0 15px;
   }
   body {
     padding: 0 22px;
+    height: 100vh;
+    width: 100%;
   }
   .hero__title {
     font-size: 1.5rem;
@@ -155,8 +161,209 @@
     width: 335px;
     height: 255px;
   }
-  .card__title{
+  .card__title {
     padding: 15px;
     // border: 1px solid red;
+  }
+}
+
+//LOGEMENT
+
+.logement {
+  width: 100%;
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  // border: 1px solid red;
+}
+.logement__container {
+  width: 100%;
+  height: 415px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.logement__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logement__title {
+  color: #ff6060;
+  font-family: "Montserrat";
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 500;
+  // width: 50%;
+  height: 51px;
+}
+.logement__location {
+  color: #000;
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.logement__tag {
+  // max-width: 150px;
+  height: 25px;
+  border-radius: 10px;
+  background: #ff6060;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  padding: 5px 5px;
+}
+
+.logement__tags {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 24px 0;
+  // border: 1px solid red;
+  max-width: 450px;
+}
+
+.logement__infos {
+  // border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user__infos {
+  // border: 1px solid rgb(44, 211, 29);
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 21px;
+}
+.userInfos__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  height: 64px;
+}
+.host__name {
+  text-transform: capitalize;
+  color: #ff6060;
+  text-align: right;
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  text-align: left;
+}
+
+.host__picture {
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.logement__rating {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.logement__rate {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 0;
+}
+@media (max-width: 1240px) {
+  .logement {
+    margin: 27px 0;
+  }
+  .logement__container {
+    height: 255px;
+    border-radius: 10px;
+  }
+  .logement__title {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    width: 335px;
+    height: 46px;
+  }
+  .logement {
+    gap: 5px;
+  }
+  .logement__location {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    width: 323px;
+    height: 22px;
+  }
+  body {
+    height: 100vh;
+    width: 100%;
+    padding: 0 22px;
+  }
+  // .logement__infos {
+  //   // border: 1px solid red;
+  // }
+  .logement__tags {
+    gap: 10px;
+    width: 100%;
+    margin: 10px 0 24px 0;
+    justify-content: start;
+  }
+  .logement__tag {
+    border-radius: 5px;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+  }
+  .logement__infos {
+    flex-direction: column;
+  }
+  .user__infos {
+    flex-direction: row;
+  }
+  .host__picture {
+    width: 32px;
+    height: 32px;
+  }
+  .host__name {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    text-align: right;
+  }
+
+  .logement__star {
+    width: 13px;
+    height: 13px;
+    margin-right: 5px;
+  }
+  .logement_descriptionContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .logement__description {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+  }
+  .arrows {
+    width: 16px;
   }
 }
