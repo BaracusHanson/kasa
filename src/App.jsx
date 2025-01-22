@@ -9,6 +9,7 @@ import "./styles/index.scss";
 import Navbar from "./components/Navbar";
 import { fetchData } from "./utils/constant";
 import Logement from "./pages/Logement";
+import Footer from "./components/Footer";
 function App() {
   const [datas, setDatas] = useState([]);
   useEffect(() => {
@@ -29,6 +30,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
             <Route path="/logement/:id" element={<Logement />} />
           </Routes>
+          <Footer />
         </BrowserRouter>
       </ctx.Provider>
     </>

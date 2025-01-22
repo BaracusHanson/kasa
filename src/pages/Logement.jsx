@@ -1,31 +1,67 @@
 import { ctx } from "../utils/constant";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import Tag from "../components/Tag";
 import Description from "../components/Description";
 import stars from "../assets/starBase.png";
 import starFull from "../assets/star-active.png";
-
+import left from "../assets/left.png";
+import right from "../assets/right.png";
 const Logement = () => {
   const data = useContext(ctx);
   const id = useParams();
-
   const appart = data.filter((el) => {
     return el.id === id.id;
   });
-  console.log(typeof parseInt(appart[0].rating));
+  // console.log(appart[0].equipments);
+  // const equipments = appart[0].equipments;
+  const description = appart[0].description;
+  const totalImg = appart[0].pictures.length;
+  // const Equipements = "Équipements";
+  const Descriptions = "Description";
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  console.log(currentImageIndex);
+  const handleLeft = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? appart[0].pictures.length - 1 : prevIndex - 1
+    );
+    console.log(currentImageIndex);
+  };
+
+  const handleRight = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === appart[0].pictures.length - 1 ? 0 : prevIndex + 1
+    );
+    console.log(currentImageIndex);
+  };
 
   return (
     <section className="logement">
       <div className="logement__container">
-        {appart[0].pictures.map((img, index) => (
+        <img
+          src={appart[0].pictures[currentImageIndex]}
+          alt="appartement"
+          className="logement__image"
+        />
+        <div
+          className="slide_container"
+          style={{ display: totalImg == 1 ? "none" : "flex" }}
+        >
+          <img src={left} alt="" className="arrow" onClick={handleLeft} />
           <img
-            src={img}
-            alt="appartement"
-            key={index}
-            className="logement__image"
+            src={right}
+            style={{ display: totalImg === 1 ? "none" : "flex" }}
+            className="arrow"
+            onClick={handleRight}
           />
-        ))}
+        </div>
+        <div
+          className="slide_pagination"
+          style={{ display: totalImg === 1 ? "none" : "flex" }}
+        >
+          {currentImageIndex + 1}/{totalImg}
+        </div>
       </div>
       <div className="logement__infos">
         <div>
@@ -72,8 +108,8 @@ const Logement = () => {
         </div>
       </div>
       <div className="logement_descriptionContainer">
-        <Description />
-        <Description />
+        <Description title={Descriptions} description={description} />
+        {/* <Description title={Equipements} equipments={equipments} /> */}
       </div>
     </section>
   );

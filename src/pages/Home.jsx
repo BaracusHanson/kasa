@@ -7,7 +7,7 @@ import { titleHome, img1, ctx } from "../utils/constant";
 export const Home = () => {
 const data = useContext(ctx)
   return (
-    <div>
+    <div className="main__container">
       <Hero title={titleHome} img={img1} />
       <main className="main">
         {data.map((appart) => (
