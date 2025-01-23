@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import arrow from "../assets/arrow_up.png";
 import { useEffect, useState } from "react";
 
-const Description = ({ title, description }) => {
+const Accordeon = ({ infos }) => {
   const [open, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1240);
   const handleOpen = () => {
@@ -19,13 +19,13 @@ const Description = ({ title, description }) => {
 
   return (
     <div
-      className="accordeon"
+      className="AboutAccordeon"
       style={{
         maxHeight: open ? "300px" : isMobile ? "30px" : "52px",
       }}
     >
-      <button className="logement__description" onClick={handleOpen}>
-        <span>{title} </span>
+      <button className="Aboutlogement__description" onClick={handleOpen}>
+        <span className="About_title">{infos.title} </span>
         <img
           src={arrow}
           alt="arrow"
@@ -42,15 +42,14 @@ const Description = ({ title, description }) => {
           transform: open ? "translateY(0)" : "translateY(-100%)",
         }}
       >
-        {description}
+        {infos.description}
       </p>
     </div>
   );
 };
 
-Description.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+Accordeon.propTypes = {
+    infos: PropTypes.string.isRequired,
 };
 
-export default Description;
+export default Accordeon;

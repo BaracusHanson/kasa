@@ -7,6 +7,7 @@ import stars from "../assets/starBase.png";
 import starFull from "../assets/star-active.png";
 import left from "../assets/left.png";
 import right from "../assets/right.png";
+import Equipement from "../components/Equipement";
 const Logement = () => {
   const data = useContext(ctx);
   const id = useParams();
@@ -14,10 +15,10 @@ const Logement = () => {
     return el.id === id.id;
   });
   // console.log(appart[0].equipments);
-  // const equipments = appart[0].equipments;
+  const equipments = appart[0].equipments;
   const description = appart[0].description;
   const totalImg = appart[0].pictures.length;
-  // const Equipements = "Équipements";
+  const Equipements = "Équipements";
   const Descriptions = "Description";
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -109,7 +110,7 @@ const Logement = () => {
       </div>
       <div className="logement_descriptionContainer">
         <Description title={Descriptions} description={description} />
-        {/* <Description title={Equipements} equipments={equipments} /> */}
+        <Equipement title={Equipements} equipments={equipments} />
       </div>
     </section>
   );
