@@ -15,6 +15,7 @@ function App() {
   useEffect(() => {
     const fetchAppart = async () => {
       const apparts = await fetchData(url);
+      localStorage.setItem("apparts", JSON.stringify(apparts));
       setDatas(apparts);
     };
     fetchAppart();

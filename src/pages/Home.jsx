@@ -1,11 +1,11 @@
-import { useContext} from "react";
+import { useContext } from "react";
 import Card from "../components/Card";
 import Hero from "../components/Hero";
 import { titleHome, img1, ctx } from "../utils/constant";
 
-
 export const Home = () => {
-const data = useContext(ctx)
+  const data = useContext(ctx);
+
   return (
     <div className="main__container">
       <Hero title={titleHome} img={img1} />
@@ -22,4 +22,3 @@ const data = useContext(ctx)
     </div>
   );
 };
-

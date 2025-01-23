@@ -21,7 +21,7 @@ const Accordeon = ({ infos }) => {
     <div
       className="AboutAccordeon"
       style={{
-        maxHeight: open ? "300px" : isMobile ? "30px" : "52px",
+        maxHeight: open ? "300px" : isMobile ? "36px" : "52px",
       }}
     >
       <button className="Aboutlogement__description" onClick={handleOpen}>
@@ -49,7 +49,7 @@ const Accordeon = ({ infos }) => {
 };
 
 Accordeon.propTypes = {
-    infos: PropTypes.string.isRequired,
+    infos: PropTypes.object.isRequired,
 };
 
 export default Accordeon;

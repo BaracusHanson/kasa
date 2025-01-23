@@ -1,5 +1,5 @@
 import logo from "../assets/LOGO.png";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -7,14 +7,24 @@ const Navbar = () => {
       <img src={logo} alt="logo" className="navbar-logo" />
       <ul className="navbar-menu">
         <li className="navbar-item">
-          <Link to="/" className="navbar-link">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "navbar-link active" : "navbar-link"
+            }
+          >
             Accueil
-          </Link>
+          </NavLink>
         </li>
         <li className="navbar-item">
-          <Link to="/apropos" className="navbar-link">
+          <NavLink
+            to="/apropos"
+            className={({ isActive }) =>
+              isActive ? "navbar-link active" : "navbar-link"
+            }
+          >
             A propos
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>

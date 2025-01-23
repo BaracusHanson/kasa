@@ -7,7 +7,7 @@ const Corp = ({ children }) => {
   return <div className="aboutContainer">{children}</div>;
 };
 Corp.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 const About = () => {

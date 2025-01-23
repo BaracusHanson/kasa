@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import arrow from "../assets/arrow_up.png";
 import { useEffect, useState } from "react";
 
-const Equipement = ({ title, equipments }) => {
+const Equipement = ({ title, equipmentts }) => {
   const [open, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1240);
 
@@ -43,7 +43,7 @@ const Equipement = ({ title, equipments }) => {
           transform: open ? "translateY(0)" : "translateY(-100%)",
         }}
       >
-        {equipments.map((equip, index) => (
+        {equipmentts.map((equip, index) => (
           <li key={index}>{equip} </li>
         ))}
       </ul>
@@ -53,7 +53,7 @@ const Equipement = ({ title, equipments }) => {
 
 Equipement.propTypes = {
   title: PropTypes.string.isRequired,
-  equipments: PropTypes.arrayOf(PropTypes.string).isRequired,
+  equipmentts: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Equipement;

@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import arrow from "../assets/arrow_up.png";
 import { useEffect, useState } from "react";
 
-const Description = ({ title, description }) => {
+const Description = ({ title, descriptions }) => {
   const [open, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1240);
   const handleOpen = () => {
@@ -42,7 +42,7 @@ const Description = ({ title, description }) => {
           transform: open ? "translateY(0)" : "translateY(-100%)",
         }}
       >
-        {description}
+        {descriptions}
       </p>
     </div>
   );
@@ -50,7 +50,7 @@ const Description = ({ title, description }) => {
 
 Description.propTypes = {
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  descriptions: PropTypes.string.isRequired,
 };
 
 export default Description;
