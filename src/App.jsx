@@ -14,12 +14,22 @@ function App() {
   const [datas, setDatas] = useState([]);
   useEffect(() => {
     const fetchAppart = async () => {
-      const apparts = await fetchData(url);
-      localStorage.setItem("apparts", JSON.stringify(apparts));
-      setDatas(apparts);
+      const storedData = localStorage.getItem("apparts");
+      if (storedData) {
+        setDatas(JSON.parse(storedData));
+        return;
+      }
+      try {
+        const apparts = await fetchData(url);
+        localStorage.setItem("apparts", JSON.stringify(apparts));
+        setDatas(apparts);
+      } catch (error) {
+        console.error("Erreur lors de la récupération des données :", error);
+      }
     };
     fetchAppart();
   }, []);
+
   return (
     <>
       <ctx.Provider value={datas}>

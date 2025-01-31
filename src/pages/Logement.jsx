@@ -1,6 +1,6 @@
 import { ctx } from "../utils/constant";
-import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import Tag from "../components/Tag";
 import Description from "../components/Description";
 import stars from "../assets/starBase.png";
@@ -11,7 +11,18 @@ import Equipement from "../components/Equipement";
 const Logement = () => {
   const data = useContext(ctx);
   const { id } = useParams();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const appart = data.find((el) => el.id === id);
+  if (!appart) {
+    return (
+      <div className="help">
+        <p>Logement introuvable !</p>
+        <Link to={"/"}>
+          <button className="retourBoutton">{"Revenir à l'accueil"}</button>
+        </Link>
+      </div>
+    );
+  }
   const {
     pictures,
     title,
@@ -28,20 +39,16 @@ const Logement = () => {
   const Equipements = "Équipements";
   const Descriptions = "Description";
 
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  console.log(currentImageIndex);
   const handleLeft = () => {
     setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? appart.pictures.length - 1 : prevIndex - 1
     );
-    console.log(currentImageIndex);
   };
 
   const handleRight = () => {
     setCurrentImageIndex((prevIndex) =>
       prevIndex === appart.pictures.length - 1 ? 0 : prevIndex + 1
     );
-    console.log(currentImageIndex);
   };
 
   return (
