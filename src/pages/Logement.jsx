@@ -1,4 +1,4 @@
-import { ctx } from "../utils/constant";
+import { ctx } from "/public/utils/constant.js";
 import { useContext, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Tag from "../components/Tag";

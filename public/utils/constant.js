@@ -8,7 +8,7 @@ export const titleAbout = "";
 export const img1 = hero1Image;
 export const img2 = hero2Image;
 
-export const url = "src/utils/data.json";
+export const url = "../public/utils/data.json";
 export const fetchData = async (url) => {
   try {
     const response = await axios.get(url);

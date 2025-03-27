@@ -1,8 +1,8 @@
 import Accordeon from "../components/Accordeon";
 import Hero from "../components/Hero";
-import { titleAbout, img2 } from "../utils/constant";
+import { titleAbout, img2 } from "/public/utils/constant.js";
 import PropTypes from "prop-types";
-import { infosServices } from "../utils/constant";
+import { infosServices } from "/public/utils/constant.js";
 const Corp = ({ children }) => {
   return <div className="aboutContainer">{children}</div>;
 };

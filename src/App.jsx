@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ctx, url } from "./utils/constant";
+import { ctx, url } from "../public/utils/constant";
 import { Route, Routes, HashRouter } from "react-router-dom";
 import { Home } from "./pages/Home";
 import About from "./pages/About";
@@ -7,7 +7,7 @@ import NotFound from "./pages/NotFound";
 import "./styles/App.scss";
 import "./styles/index.scss";
 import Navbar from "./components/Navbar";
-import { fetchData } from "./utils/constant";
+import { fetchData } from "../public/utils/constant";
 import Logement from "./pages/Logement";
 import Footer from "./components/Footer";
 function App() {

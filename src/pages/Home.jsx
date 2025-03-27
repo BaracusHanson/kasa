@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import Card from "../components/Card";
 import Hero from "../components/Hero";
-import { titleHome, img1, ctx } from "../utils/constant";
+import { titleHome, img1, ctx } from "/public/utils/constant.js";
 
 export const Home = () => {
   const data = useContext(ctx);
