@@ -14,11 +14,11 @@ function App() {
   const [datas, setDatas] = useState([]);
   useEffect(() => {
     const fetchAppart = async () => {
-      const storedData = localStorage.getItem("apparts");
-      if (storedData) {
-        setDatas(JSON.parse(storedData));
-        return;
-      }
+      // const storedData = localStorage.getItem("apparts");
+      // if (storedData) {
+      //   setDatas(JSON.parse(storedData));
+      //   return;
+      // }
       try {
         const apparts = await fetchData(url);
         localStorage.setItem("apparts", JSON.stringify(apparts));
