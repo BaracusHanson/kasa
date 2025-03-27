@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import arrow from "../assets/arrow_up.png";
+import arrow from "/assets/arrow_up.png";
 import { useEffect, useState } from "react";
 
 const Equipement = ({ title, equipmentts }) => {

@@ -1,6 +1,6 @@
 import { createContext } from "react";
-import hero1Image from "../assets/hero1.png";
-import hero2Image from "../assets/hero2.png";
+import hero1Image from "/assets/hero1.png";
+import hero2Image from "/assets/hero2.png";
 import axios from "axios";
 export const ctx = createContext();
 export const titleHome = "Chez vous, partout et ailleurs";

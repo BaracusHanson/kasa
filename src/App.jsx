@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ctx, url } from "./utils/constant";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes, HashRouter } from "react-router-dom";
 import { Home } from "./pages/Home";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
@@ -33,7 +33,7 @@ function App() {
   return (
     <>
       <ctx.Provider value={datas}>
-        <BrowserRouter>
+        <HashRouter>
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -42,7 +42,7 @@ function App() {
             <Route path="/logement/:id" element={<Logement />} />
           </Routes>
           <Footer />
-        </BrowserRouter>
+        </HashRouter>
       </ctx.Provider>
     </>
   );

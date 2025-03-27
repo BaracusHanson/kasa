@@ -3,10 +3,10 @@ import { useContext, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Tag from "../components/Tag";
 import Description from "../components/Description";
-import stars from "../assets/starBase.png";
-import starFull from "../assets/star-active.png";
-import left from "../assets/left.png";
-import right from "../assets/right.png";
+import stars from "/assets/starBase.png";
+import starFull from "/assets/star-active.png";
+import left from "/assets/left.png";
+import right from "/assets/right.png";
 import Equipement from "../components/Equipement";
 const Logement = () => {
   const data = useContext(ctx);
