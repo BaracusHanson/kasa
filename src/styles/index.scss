@@ -107,7 +107,8 @@
   background-color: #ff6060;
   display: flex;
   justify-content: space-between;
-  width: 582px;
+  // width: 582px;
+  width: 100%;
   padding: 10px 20px 10px 10px;
   align-items: center;
   color: #fff;
@@ -140,7 +141,7 @@
 
 .logement_descriptionContainer {
   display: flex;
-  // border: 1px solid red;
+  gap: 20px;
   justify-content: space-between;
 }
 

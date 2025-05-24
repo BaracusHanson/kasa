@@ -1,9 +1,19 @@
 import PropTypes from "prop-types";
 const Tag = ({ tags }) => {
-  return <span className="logement__tag"> {tags} </span>;
+  return (
+    <>
+      <p className="logement__tags">
+        {tags.map((tag, index) => (
+          <span className="logement__tag" key={index}>
+            {tag}
+          </span>
+        ))}
+      </p>
+    </>
+  );
 };
 
 Tag.propTypes = {
-  tags: PropTypes.string.isRequired,
+  tags: PropTypes.array.isRequired,
 };
 export default Tag;

@@ -1,11 +1,12 @@
-import PropTypes from "prop-types";
-import arrow from "/assets/arrow_up.png";
 import { useEffect, useState } from "react";
-
-const Equipement = ({ title, equipmentts }) => {
+import arrow from "/assets/arrow_up.png";
+import PropTypes from "prop-types";
+const Dropdown = ({ title, descriptions }) => {
   const [open, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1240);
-
+  const handleOpen = () => {
+    setOpen(!open);
+  };
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1240);
@@ -14,10 +15,6 @@ const Equipement = ({ title, equipmentts }) => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const handleOpen = () => {
-    setOpen(!open);
-  };
   return (
     <div
       className="accordeon"
@@ -37,23 +34,37 @@ const Equipement = ({ title, equipmentts }) => {
           }}
         />
       </button>
-      <ul
-        className="description"
-        style={{
-          transform: open ? "translateY(0)" : "translateY(-100%)",
-        }}
-      >
-        {equipmentts.map((equip, index) => (
-          <li key={index}>{equip} </li>
-        ))}
-      </ul>
+
+      {Array.isArray(descriptions) ? (
+        <ul
+          className="description"
+          style={{
+            transform: open ? "translateY(0)" : "translateY(-100%)",
+          }}
+        >
+          {descriptions.map((equip, index) => (
+            <li key={index}>{equip} </li>
+          ))}
+        </ul>
+      ) : (
+        <p
+          className="description"
+          style={{
+            transform: open ? "translateY(0)" : "translateY(-100%)",
+          }}
+        >
+          {descriptions}
+        </p>
+      )}
     </div>
   );
 };
-
-Equipement.propTypes = {
+Dropdown.propTypes = {
   title: PropTypes.string.isRequired,
-  equipmentts: PropTypes.arrayOf(PropTypes.string).isRequired,
+  descriptions: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]).isRequired,
 };
 
-export default Equipement;
+export default Dropdown;

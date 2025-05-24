@@ -6,7 +6,9 @@ const Card = ({ imageSrc, title, id }) => {
     <Link to={`/logement/${id}`}>
       <article className="card">
         <img src={imageSrc} alt={title} className="card__image" />
-        <h2 className="card__title">{title}</h2>
+        <div className="card__gradient">
+          <h2 className="card__title">{title}</h2>
+        </div>
       </article>
     </Link>
   );

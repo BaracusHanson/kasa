@@ -17,6 +17,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+.error {
+  font-weight: 700;
+  font-size: 18rem;
+  color: #ff6060;
+}
 
 // NAVBAR
 
@@ -113,7 +118,7 @@
 .help {
   // border: 1px solid red;
   width: 100%;
-  height: 457px;
+  height: calc(100vh - 463px);
   display: flex;
   flex-direction: column;
   gap: 55px;
@@ -121,16 +126,18 @@
   justify-content: center;
   font-size: 1.5rem;
   font-weight: 700;
+}
 
-  .retourBoutton {
-    padding: 10px 20px;
-    cursor: pointer;
-    background-color: #ff6060;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    color: #fff;
-  }
+.retourBoutton {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  font-size: 2.25rem;
+  color: #000;
+  text-decoration: underline;
+  font-weight: 500;
 }
 
 .hero__title {
@@ -183,13 +190,27 @@
   border-radius: 10px;
   overflow: hidden;
   position: relative;
+  overflow: hidden;
 }
 .card__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: contrast(0.8);
+  display: block;
+  // filter: contrast(0.8);
 }
+.card__gradient {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+}
+
 
 .card__title {
   position: absolute;
@@ -204,6 +225,7 @@
   font-weight: 700;
   // border: 1px solid red;
   width: 100%;
+   z-index: 2;
 }
 
 @media (max-width: 1240px) {
@@ -228,6 +250,7 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
+  height: calc(100vh - 554px);
   // border: 1px solid red;
 }
 .logement__container {
@@ -304,10 +327,12 @@
 
 .logement__tags {
   display: flex;
-  justify-content: space-between;
+  gap: 10px;
+  // justify-content: space-between;
   margin: 20px 0 24px 0;
-  // border: 1px solid red;
-  max-width: 450px;
+  // border: 1px solid rgb(17, 217, 24);
+  // width: 100%;
+  // max-width: 365px;
 }
 
 .logement__infos {
@@ -402,7 +427,7 @@
 .accordeon {
   border-radius: 10px 10px 5px 5px;
   background-color: rgba(226, 226, 226, 0.45);
-  width: 582px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -422,7 +447,8 @@
   transition-duration: 0.2s;
 }
 .about__container {
-  width: 100%;
+  // width: 100%;
+  height: calc(100vh - 454px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -431,7 +457,7 @@
 }
 
 .description {
-  width: 582px;
+  // width: 582px;
   padding: 20px;
   font-size: 1.2rem;
   font-style: normal;
@@ -459,14 +485,75 @@
   justify-content: center;
   height: 100%;
   gap: 30px;
-  // border: 1px solid red;
   width: 1023px;
   margin: 30px auto;
 }
+
+.pError {
+  font-size: 2.2rem;
+  width: 872px;
+  text-align: center;
+  color: #ff6060;
+}
 @media (max-width: 1240px) {
+  .retourBoutton {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #000;
+    text-decoration: underline;
+    // border: 1px solid #000;
+    font-weight: 500;
+  }
+
+  .help {
+    // border: 1px solid red;
+    width: 100%;
+    height: calc(100vh - 290px);
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .pError {
+    font-size: 1.1rem;
+    width: 260px;
+    text-align: center;
+    color: #ff6060;
+  }
+  .error {
+    font-size: 6rem;
+  }
+  .about__container {
+    // width: 100%;
+    height: calc(100vh - 290px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // border: 1px solid red;
+  }
+
+  .logement {
+    width: 1240px;
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    height: calc(100vh - 300px);
+    // border: 1px solid red;
+  }
+
   .description,
   .accordeon {
-    width: 335px;
+    // width: 335px;
     max-height: 169px;
     border-radius: 5px;
     font-size: 0.75rem;
@@ -533,12 +620,14 @@
 
   .logement__tags {
     gap: 10px;
-    width: 100%;
+    // width: 100%;
+    // border: 1px solid red;
     margin: 10px 0 24px 0;
     justify-content: start;
   }
   .logement__tag {
-    border-radius: 5px;
+    border-radius: 10px;
+    height: 18px;
     font-size: 10px;
     font-style: normal;
     font-weight: 700;
